@@ -1,0 +1,5 @@
+eclipse.preferences.version=1
+encoding//components/bsp/include/led.h=UTF-8
+encoding//components/bsp/include/wm8978.h=UTF-8
+encoding//components/bsp/led.c=UTF-8
+encoding//components/bsp/wm8978.c=UTF-8

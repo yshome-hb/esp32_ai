@@ -1,0 +1,79 @@
+menu "Camera configuration"
+
+config ENABLE_TEST_PATTERN
+	bool "Enable test pattern on camera output"
+	default n
+	help
+		Configure the camera module to output test pattern instead of live image.
+		
+		Use this option to troubleshoot image issues like noise,
+		distortion, not legible and missing live image.
+		Instead, module will generate regular vertical bars 
+		in shades from dark to white.
+        
+choice ESP32_CAMERA
+	prompt "Camera Module"
+	default OV2640_SUPPORT
+
+config OV2640_SUPPORT
+	bool "OV2640 Support"
+	help
+		Enable this option if you want to use the OV2640.
+		Disable this option to safe memory.
+
+config OV7725_SUPPORT
+	bool "OV7725 Support"
+	help
+		Enable this option if you want to use the OV7725.
+		Disable this option to safe memory.
+endchoice
+     
+config XCLK_FREQ
+    int "XCLK Frequency"
+    default "20000000"
+    help
+        The XCLK Frequency in Herz.
+        
+menu "Pin Configuration"
+    config CAM_D0
+        int "CAM_D0"
+        default "4"
+    config CAM_D1
+        int "CAM_D1"
+        default "5"
+    config CAM_D2
+        int "CAM_D2"
+        default "18"
+    config CAM_D3
+        int "CAM_D3"
+        default "19"
+    config CAM_D4
+        int "CAM_D4"
+        default "36"
+    config CAM_D5
+        int "CAM_D5"
+        default "39"
+    config CAM_D6
+        int "CAM_D6"
+        default "34"
+    config CAM_D7
+        int "CAM_D7"
+        default "35"
+    config CAM_XCLK
+        int "CAM_XCLK"
+        default "21"
+    config CAM_PCLK
+        int "CAM_PCLK"
+        default "22"
+    config CAM_VSYNC
+        int "CAM_VSYNC"
+        default "25"
+    config CAM_HREF
+        int "CAM_HREF"
+        default "23"
+    config CAM_RESET
+        int "CAM_RESET"
+        default "2"
+endmenu
+	
+endmenu
